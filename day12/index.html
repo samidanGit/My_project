@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a table and explore authentic traditional Ethiopian dishes at Habesha Eatery in Addis Ababa.">
+    <title>Habesha Eatery - Home & Reservations</title>
+</head>
+<body>
+
+    <!-- Shared Navigation -->
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home & Reservations</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Habesha Eatery</h1>
+    </header>
+
+    <main>
+        <!-- Hero / Intro Section -->
+        <section>
+            <h2>Welcome to Authentic Ethiopian Dining</h2>
+            <p>Experience the rich flavors of traditional cuisine right in the heart of Addis Ababa.</p>
+        </section>
+
+        <!-- Media Block -->
+        <section>
+            <h2>Our Signature Dish</h2>
+            <figure>
+                <img src="images/doro-wat.jpg" alt="A traditional clay mesob containing spicy Doro Wat chicken stew surrounded by soft injera bread">
+                <figcaption>Traditional Doro Wat served with fresh injera.</figcaption>
+            </figure>
+            <div>
+                <h3>Find Our Location</h3>
+                <iframe 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=38.74,8.98,38.78,9.04&amp;layer=mapnik" 
+                    width="500" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    title="Map showing Habesha Eatery location in Addis Ababa">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Menu Table -->
+        <section>
+            <h2>Our Menu</h2>
+            <table>
+                <caption>Traditional Ethiopian Dishes and Pricing</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Dish</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price ETB</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Doro Wat</td>
+                        <td>Spicy chicken stew with hard-boiled eggs</td>
+                        <td>450 ETB</td>
+                    </tr>
+                    <tr>
+                        <td>Kitfo</td>
+                        <td>Minced raw or lightly cooked beef spiced with mitmita</td>
+                        <td>500 ETB</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetarian Combo</td>
+                        <td>A variety of lentils, shiro, and vegetable dishes on injera</td>
+                        <td>350 ETB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Reservation Form -->
+        <section>
+            <h2>Reserve a Table</h2>
+            <form action="/submit-reservation" method="POST">
+                <!-- Submission Method Justification:
+                     POST is chosen because booking a reservation transmits private user data 
+                     (name, email, phone) which must remain secure within the HTTP request body 
+                     instead of being appended visibly inside the URL query string. -->
+
+                <div>
+                    <label for="res-name">Full Name:</label>
+                    <input type="text" id="res-name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="res-email">Email Address:</label>
+                    <input type="email" id="res-email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="res-phone">Phone Number (+251 format):</label>
+                    <input type="tel" id="res-phone" name="phone" 
+                           placeholder="+251911223344" 
+                           pattern="^\+251[97]\d{8}$" 
+                           title="Must start with +251 followed by 9 or 7 and 8 digits" 
+                           required>
+                </div>
+
+                <div>
+                    <label for="res-date">Reservation Date:</label>
+                    <input type="date" id="res-date" name="date" required>
+                </div>
+
+                <div>
+                    <button type="submit">Confirm Reservation</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Habesha Eatery. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
