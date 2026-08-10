@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business profile card for Bole Highlands Cafe, an authentic specialty coffee shop in Addis Ababa.">
+    <title>Bole Highlands Cafe - Business Profile</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables & Global Resets */
+        :root {
+            --primary-hue: 25;
+            --primary-sat: 65%;
+            --primary-light: 42%;
+            
+            --color-primary: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
+            --color-primary-hover: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) - 10%));
+            
+            --color-bg: #f9f6f0;
+            --color-card-bg: #ffffff;
+            --color-text: #2c2522;
+            --color-muted: #6b605a;
+            --color-border: #e6dfd5;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+
+            --border-radius: 12px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: var(--space-sm);
+        }
+
+        /* Centered Profile Card */
+        .profile-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 10px 25px rgba(44, 37, 34, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Pseudo-element (Top Accent Bar) */
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--color-primary);
+        }
+
+        /* Typographic Hierarchy */
+        .card-header {
+            margin-bottom: var(--space-md);
+            text-align: center;
+        }
+
+        .business-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .body-text {
+            font-size: 1rem;
+            color: var(--color-muted);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+
+        /* Details List */
+        .business-details {
+            list-style: none;
+            margin-bottom: var(--space-lg);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) 0;
+        }
+
+        .business-details li {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            padding: var(--space-xs) 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .business-details li strong {
+            color: var(--color-text);
+        }
+
+        /* Contact Button with HSL Lightness Hover */
+        .contact-btn {
+            display: block;
+            width: 100%;
+            padding: var(--space-sm);
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border: none;
+            border-radius: calc(var(--border-radius) - 4px);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--color-primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="profile-card">
+            <div class="card-header">
+                <h1 class="business-name">Bole Highlands Cafe</h1>
+                <p class="tagline">Artisan Coffee & Roastery</p>
+            </div>
+
+            <p class="body-text">
+                Serving freshly brewed, single-origin Ethiopian specialty coffee beans right in the vibrant heart of Bole, Addis Ababa. Stop by for a traditional Buna ceremony or a modern espresso.
+            </p>
+
+            <ul class="business-details">
+                <li><span>Location:</span> <strong>Bole Road, Addis Ababa</strong></li>
+                <li><span>Payment:</span> <strong>TeleBirr & Cash Accepted</strong></li>
+                <li><span>Hours:</span> <strong>7:00 AM – 9:00 PM</strong></li>
+            </ul>
+
+            <a href="mailto:contact@bolehighlandscafe.et" class="contact-btn">Contact Business</a>
+        </article>
+    </main>
+
+</body>
+</html>
