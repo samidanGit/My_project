@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habesha Market - Authentic Ethiopian Marketplace</title>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">
+            <h1>Habesha Market</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home">
+            <h2>Experience the Heart of Ethiopia</h2>
+            <p>Discover authentic traditional crafts, aromatic spices, premium coffee, and cultural attire delivered right to your doorstep.</p>
+            <a href="#products">Shop Now</a>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="products">
+            <h2>Featured Products</h2>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <img src="images/coffee.jpg" alt="Traditional Ethiopian Coffee Beans">
+                    <h3>Yirgacheffe Coffee Beans</h3>
+                    <p>Rich, aromatic, and organically grown in the highlands of Ethiopia.</p>
+                    <span>$15.00</span>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <img src="images/spices.jpg" alt="Ethiopian Spice Blend Berbere">
+                    <h3>Authentic Berbere Spice</h3>
+                    <p>A fiery, flavorful essential spice blend for traditional Ethiopian cooking.</p>
+                    <span>$8.50</span>
+                    <button>Add to Cart</button>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <img src="images/habesha-kemis.jpg" alt="Traditional Habesha Kemis">
+                    <h3>Handwoven Habesha Kemis</h3>
+                    <p>Beautiful traditional dress featuring intricate handmade border patterns (tibeb).</p>
+                    <span>$120.00</span>
+                    <button>Add to Cart</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Habesha Market</h2>
+            <p>Habesha Market bridges the gap between local Ethiopian artisans, farmers, and the global community. We are dedicated to celebrating and preserving our rich cultural heritage by bringing authentic, high-quality traditional goods straight from home to you.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Habesha Market. All rights reserved.</p>
+        <address>
+            <p>Contact us: <a href="mailto:support@habeshamarket.com">support@habeshamarket.com</a></p>
+            <p>Addis Ababa, Ethiopia</p>
+        </address>
+    </footer>
+
+</body>
+</html>
