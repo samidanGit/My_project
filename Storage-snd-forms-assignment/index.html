@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persistent Signup Form</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #212529;
+      --border: #ced4da;
+      --primary: #0d6efd;
+      --primary-hover: #0b5ed7;
+      --error-bg: #f8d7da;
+      --error-text: #842029;
+      --error-border: #f5c2c7;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --text: #e0e0e0;
+      --border: #333333;
+      --primary: #3d8bfd;
+      --primary-hover: #0d6efd;
+      --error-bg: #2c0b0e;
+      --error-text: #ea868f;
+      --error-border: #842029;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      box-sizing: border-box;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .field {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background-color: var(--card-bg);
+      color: var(--text);
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: -1px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .error-box {
+      margin-top: 1.25rem;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      background-color: var(--error-bg);
+      color: var(--error-text);
+      border: 1px solid var(--error-border);
+      display: none;
+    }
+
+    .error-box.active {
+      display: block;
+    }
+
+    .stats-footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text);
+      opacity: 0.8;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <div class="header-bar">
+      <h1>Sign Up</h1>
+      <button id="themeToggle" class="toggle-btn" type="button">Theme</button>
+    </div>
+
+    <form id="signupForm" novalidate>
+      <div class="field">
+        <label for="nameInput">Full Name</label>
+        <input type="text" id="nameInput" name="name" placeholder="Abebe Bikila" required />
+      </div>
+
+      <div class="field">
+        <label for="phoneInput">Ethiopian Phone Number</label>
+        <input type="tel" id="phoneInput" name="phone" placeholder="0911234567 or +251911234567" required />
+      </div>
+
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+
+    <div id="errorArea" class="error-box" role="alert"></div>
+    <div id="counterArea" class="stats-footer"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
