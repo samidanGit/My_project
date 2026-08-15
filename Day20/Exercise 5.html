@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 5 - UI State Test</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .loading { color: #0066cc; font-weight: bold; }
+    .error { color: #dc2626; background: #fef2f2; padding: 10px; border-radius: 6px; }
+    .success { background: #f0fdf4; padding: 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>Fetch State Test Page</h2>
+  <button onclick="fetchData()">Fetch Random Data</button>
+  <div id="status" style="margin-top: 15px;"></div>
+
+  <script>
+    async function fetchData() {
+      const status = document.getElementById('status');
+      
+      // State 1: Loading
+      status.className = 'loading';
+      status.textContent = 'Loading data from server...';
+
+      try {
+        const res = await fetch('https://restcountries.com/v3.1/name/ethiopia');
+        if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+        
+        const [data] = await res.json();
+
+        // State 2: Success
+        status.className = 'success';
+        status.textContent = `Success! Fetched ${data.name.common} (Capital: ${data.capital[0]})`;
+
+      } catch (err) {
+        // State 3: Error
+        status.className = 'error';
+        status.textContent = `Error: ${err.message}. Try toggling your network settings.`;
+      }
+    }
+  </script>
+</body>
+</html>
